@@ -8,7 +8,7 @@ After installing <http://vagrantup.com/> correctly, install the plugin:
 
 `vagrant plugin install vagrant-aws`
 
-### Setting up AWS
+### Deployment Guide
 
 To be able to automatically create your instances on EC2, there are some steps you need to do:
 
