@@ -1,0 +1,11 @@
+#!/bin/bash
+
+export PERL5LIB='<%= node[:perldancer][:app_dancer_root] %>/lib'
+export PERLBREW_ROOT=/opt/perlbrew
+source ${PERLBREW_ROOT}/etc/bashrc
+
+perlbrew use <%= node[:perldancer][:perl_version] %>
+
+exec 2>&1 \
+/opt/perlbrew/perls/perl-<%= node[:perldancer][:perl_version] %>/bin/plackup -s Starman -l 0.0.0.0:<%= node[:perldancer][:dancerport] %> -E <%= node[:perldancer][:app_dancer_environment] %> \
+--workers=3 -a <%= node[:perldancer][:app_dancer_root] %>/bin/app.pl

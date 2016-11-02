@@ -1,0 +1,5 @@
+.aws
+.keys
+.vagrant
+.DS_Store
+Vagrantfile
